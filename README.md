@@ -1,12 +1,9 @@
-# Bixploit
+# Lauxploit
 
-A friend of mine [@Biboon](https://www.github.com/biboon) always had the bad idea to leave his computer unlocked.
-I told him to lock it, as it might be really unsecure.
-I did not.
-I changed his homepage to a really "nice" site.
-We laught.
+Forked from code of my evil mate [@henyxia](https://www.github.com/henyxia) ...
 
-Some days later, he did it again. I changed his homepage again. We laught again but he told me that it's not useful to lock a computer if you went AFK less than 20 seconds.
+Will use to change wallpaper automatically (instead of changing internet homepage...)
+-> I will only change Part 2
 
 So I create a small script designed for Arduino Leonardo to work as a keyboard and inject a custom task to Windows' task scheduler.
 
@@ -43,3 +40,14 @@ schtasks /create /sc minute /mo 1 /tn "Bixploit" /tr C:\Bixploit.bat
 The privilege escalation part is not mandatory but I thought it was fun to put it at the root of "C:\". Also, you need to have the correct keymapping for the Leoanardo.
 
 **Use it for fun only !**
+
+----
+Background Story from [@henyxia](https://www.github.com/henyxia) :
+
+A friend of mine [@Biboon](https://www.github.com/biboon) always had the bad idea to leave his computer unlocked.
+I told him to lock it, as it might be really unsecure.
+I did not.
+I changed his homepage to a really "nice" site.
+We laught.
+
+Some days later, he did it again. I changed his homepage again. We laught again but he told me that it's not useful to lock a computer if you went AFK less than 20 seconds.
