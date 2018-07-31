@@ -26,14 +26,17 @@ cmd /k
 
 ### The second part - the main script
 ```
-start http://goo.gl/x5sPkr"
-Msg * "Friendly reminder: NEVER LEAVE YOUR COMPUTER WITHOUT SURVEILLANCE"
+reg add "HKCU\control panel\desktop" /v Wallpaper /t REG_SZ /d "C:\sweet_wallpaper.bmp" /f
+reg add "HKCU\control panel\desktop" /v WallpaperStyle /t REG_SZ /d 2 /f
+RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
+Msg * "To my beloved OLD secret admirer, please receive this gift as a mark of my unwavering love for you"
 ```
+/!\ : this works only with .bmp files !
 
 ### The third part - the scheduler
 
 ```
-schtasks /create /sc minute /mo 1 /tn "Bixploit" /tr C:\Bixploit.bat
+schtasks /create /sc minute /mo 5 /tn "Lauxploit" /tr C:\Lauxploit.bat
 ```
 
 ## And now it runs !
